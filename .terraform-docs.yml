@@ -1,6 +1,8 @@
 formatter: "markdown table"
 header-from: main.tf
 content: |-
+  ## DevOps Exercise
+  # Justification
   This module creates a single ec2 web service via Terraform.
   {{ .Providers }}
   

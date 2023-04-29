@@ -9,7 +9,6 @@ resource "aws_instance" "webhost" {
     delete_on_termination = true
     encrypted             = var.encrypted
     volume_size           = var.volume_size
-
   }
   tags = var.tags
 }
