@@ -37,7 +37,6 @@ variable "vpc_security_group_ids" {
   description = "List of security group IDs to associate with."
   type        = list(string)
 }
-
 variable "tags" {
   description = "Map of tags to assign to the instance."
   type        = map(string)

@@ -2,8 +2,9 @@ formatter: "markdown table"
 header-from: main.tf
 content: |-
   ## DevOps Exercise
-  # Justification
+  ### Justification
   This module creates a single ec2 web service via Terraform.
+
   {{ .Providers }}
   
   The following information needs to be provided to the module in order for it to run
@@ -13,11 +14,7 @@ content: |-
   The following information will be provided when terraform completes
 
   {{ .Outputs }}
-sections:
-  show:
-    - providers
-    - inputs
-    - outputs
+
 output:
   file: "README.md"
   mode: replace
