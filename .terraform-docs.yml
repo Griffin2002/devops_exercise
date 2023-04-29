@@ -7,6 +7,10 @@ content: |-
   The following information needs to be provided to the module in order for it to run
 
   {{ .Inputs }}
+
+  The following information will be provided when terraform completes
+
+  {{ .Outputs }}
 sections:
   show:
     - providers
