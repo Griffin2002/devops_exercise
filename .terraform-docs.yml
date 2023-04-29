@@ -1,0 +1,20 @@
+formatter: "markdown table"
+header-from: main.tf
+content: |-
+  This module creates a single ec2 web service via Terraform.
+  {{ .Providers }}
+  
+  The following information needs to be provided to the module in order for it to run
+
+  {{ .Inputs }}
+sections:
+  show:
+    - providers
+    - inputs
+    - outputs
+output:
+  file: "README.md"
+  mode: replace
+  template: |-
+    {{ .Content }}
+    {{/** End of file fixer */}}
