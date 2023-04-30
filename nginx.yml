@@ -1,0 +1,36 @@
+---
+- name: Configure nginx
+  hosts: all
+  become: true
+  tasks:
+  - name: Install nginx
+    apt:
+      name: nginx
+      state: present
+
+  - name: Copy nginx.conf
+    copy:
+      src: nginx.conf
+      dest: /etc/nginx/
+      mode: 0644
+
+  - name: Create example directory
+    file:
+      path: /var/www/example
+      state: directory
+      owner: www-data
+      group: www-data
+      mode: 0755
+
+  - name: Copy index.html
+    copy:
+      src: index.html
+      dest: /var/www/example/
+      owner: www-data
+      group: www-data
+      mode: 0644
+
+  - name: Restart nginx
+    service:
+      name: nginx
+      state: restarted
