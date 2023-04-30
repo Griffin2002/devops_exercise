@@ -11,4 +11,4 @@ resource "aws_instance" "webhost" {
     volume_size           = var.volume_size
   }
   tags = var.tags
-}
+} 
