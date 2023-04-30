@@ -11,6 +11,5 @@ resource "aws_instance" "webhost" {
     encrypted             = var.encrypted
     volume_size           = var.volume_size
   }
-
   tags = var.tags
 } 
