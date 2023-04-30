@@ -5,7 +5,6 @@ resource "aws_instance" "webhost" {
   key_name               = var.key_name
   subnet_id              = var.subnet_id
   vpc_security_group_ids = var.vpc_security_group_id
-
   root_block_device {
     delete_on_termination = true
     encrypted             = var.encrypted
