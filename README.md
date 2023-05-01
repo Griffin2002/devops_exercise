@@ -22,7 +22,9 @@ the web server.
 - Express everything in code.
 
 ### Justification
-This module creates a single ec2 web service via Terraform.
+This module craeate an Amazon Machine Image (AMI) with the use of HashCorp Packer and Ansible.  The image
+is set up to add nginx to the image and add the nginx configuration to the image.  Then Terraform uses
+this image to create the webserver and exports the public ip as a result.
 
 ## Providers
 
@@ -37,7 +39,6 @@ The following information needs to be provided to the module in order for it to 
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_ami"></a> [ami](#input\_ami) | AMI to use for the instance. | `string` | n/a | yes |
 | <a name="input_availability_zone"></a> [availability\_zone](#input\_availability\_zone) | AZ to start the instance in. | `string` | n/a | yes |
 | <a name="input_aws_access_key"></a> [aws\_access\_key](#input\_aws\_access\_key) | n/a | `string` | n/a | yes |
 | <a name="input_aws_secret_key"></a> [aws\_secret\_key](#input\_aws\_secret\_key) | n/a | `string` | n/a | yes |

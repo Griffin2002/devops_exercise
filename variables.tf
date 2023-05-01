@@ -1,11 +1,4 @@
-variable "ami" {
-  description = "AMI to use for the instance."
-  type        = string
-  validation {
-    condition     = length(var.image_id) > 4 && substr(var.image_id, 0, 4) == "ami-"
-    error_message = "The image_id value must be a valid AMI id, starting with \"ami-\"."
-  }
-}
+
 variable "availability_zone" {
   description = "AZ to start the instance in."
   type        = string

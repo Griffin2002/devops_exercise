@@ -1,5 +1,25 @@
+data "aws_ami" "example" {
+  most_recent = true
+  name_regex  = "^example-nginx-ami"
+  owners      = ["self"]
+
+  filter {
+    name   = "name"
+    values = ["example-nginx-ami"]
+  }
+
+  filter {
+    name   = "root-device-type"
+    values = ["ebs"]
+  }
+
+  filter {
+    name   = "virtualization-type"
+    values = ["hvm"]
+  }
+}
 resource "aws_instance" "webhost" {
-  ami                    = var.ami
+  ami                    = data.aws_ami.example.id
   availability_zone      = var.availability_zone
   instance_type          = var.instance_type
   key_name               = var.key_name
